@@ -15,7 +15,7 @@ import Home from './Home'
 const DashBoard = () => (
   <div>
     <Link to="/">Home</Link>
-    <h1>DashBoard</h1>
+    <h1>DashBoard here</h1>
   </div>
 )
 
@@ -24,7 +24,11 @@ class App extends Component {
     return (
       <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" render={() => {
+                return (
+                  <Redirect to="/dashboard" />
+                )
+              }}/>
             <Route path="/dashboard" component={DashBoard} />
           </Switch>
       </Router>

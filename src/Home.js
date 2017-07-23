@@ -17,7 +17,7 @@ class Home extends Component {
     console.log('...', isAuthenicated)
     return(
       <div>
-        <Redirect to='/dashboard' />
+        Home
       </div>
     )
   }
