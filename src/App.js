@@ -21,12 +21,15 @@ const DashBoard = () => (
 
 class App extends Component {
   render() {
+    let { isAuthenicated } = this.props
     return (
       <Router>
           <Switch>
             <Route exact path="/" render={() => {
-                return (
+                return isAuthenicated ? (
                   <Redirect to="/dashboard" />
+                ) : (
+                  <Home />
                 )
               }}/>
             <Route path="/dashboard" component={DashBoard} />
@@ -36,4 +39,8 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  isAuthenicated: state.isAuthenicated
+})
+
+export default connect(mapStateToProps)(App)
