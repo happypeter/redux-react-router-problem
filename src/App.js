@@ -8,8 +8,7 @@ import {
   Redirect
 } from 'react-router-dom'
 
-import { Provider, connect } from 'react-redux'
-import store from './redux/store'
+import { connect } from 'react-redux'
 
 import Home from './Home'
 
@@ -23,14 +22,12 @@ const DashBoard = () => (
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
+      <Router>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/dashboard" component={DashBoard} />
           </Switch>
-        </Router>
-      </Provider>
+      </Router>
     );
   }
 }
