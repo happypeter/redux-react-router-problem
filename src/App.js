@@ -7,6 +7,9 @@ import {
   Link
 } from 'react-router-dom'
 
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 import Home from './Home'
 
 const DashBoard = () => (
@@ -19,14 +22,14 @@ const DashBoard = () => (
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Provider store={store}>
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/dashboard" component={DashBoard} />
           </Switch>
         </Router>
-      </div>
+      </Provider>
     );
   }
 }

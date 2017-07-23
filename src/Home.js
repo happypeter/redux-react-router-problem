@@ -4,10 +4,13 @@ import {
   Link
 } from 'react-router-dom'
 
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 
 class Home extends Component {
+
   render() {
+    const { isAuthenicated } = this.props
+    console.log('...', isAuthenicated)
     return(
       <div>
         <h1>Home</h1>
@@ -17,9 +20,8 @@ class Home extends Component {
   }
 }
 
-// const mapStateToProps = (state) =({
-//   isAuthenicated: state.isAuthenicated
-// })
+const mapStateToProps = (state) => ({
+  isAuthenicated: state.isAuthenicated
+})
 
-// export default connect(mapStateToProps)(Home)
-export default Home
+export default connect(mapStateToProps)(Home)
