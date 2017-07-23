@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
 import {
-  Link
+  Link,
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import { connect } from 'react-redux'
+
+const About = () => (<h1>About</h1>)
 
 class Home extends Component {
 
@@ -13,8 +17,7 @@ class Home extends Component {
     console.log('...', isAuthenicated)
     return(
       <div>
-        <h1>Home</h1>
-        <Link to="/dashboard">DashBoard</Link>
+        <Redirect to='/dashboard' />
       </div>
     )
   }

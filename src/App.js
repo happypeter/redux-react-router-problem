@@ -8,7 +8,7 @@ import {
   Redirect
 } from 'react-router-dom'
 
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
 import store from './redux/store'
 
 import Home from './Home'
@@ -22,18 +22,11 @@ const DashBoard = () => (
 
 class App extends Component {
   render() {
-    let isAuthenicated = true
     return (
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/" render={() => {
-                return isAuthenicated ? (
-                  <Redirect to="/dashboard" />
-                ) : (
-                  <Home />
-                )
-              }} />
+            <Route exact path="/" component={Home} />
             <Route path="/dashboard" component={DashBoard} />
           </Switch>
         </Router>
@@ -42,4 +35,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App
