@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
@@ -21,11 +22,18 @@ const DashBoard = () => (
 
 class App extends Component {
   render() {
+    let isAuthenicated = true
     return (
       <Provider store={store}>
         <Router>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" render={() => {
+                return isAuthenicated ? (
+                  <Redirect to="/dashboard" />
+                ) : (
+                  <Home />
+                )
+              }} />
             <Route path="/dashboard" component={DashBoard} />
           </Switch>
         </Router>
