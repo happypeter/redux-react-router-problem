@@ -18,6 +18,7 @@ class Home extends Component {
     return(
       <div>
         Home
+        <Link to="/dashboard">dashboard</Link>
       </div>
     )
   }
