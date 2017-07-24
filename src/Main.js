@@ -8,6 +8,7 @@ import {
   Link,
   Redirect
 } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 const DashBoard = () => (
   <div>
@@ -34,4 +35,8 @@ class Main extends Component {
   }
 }
 
-export default Main
+const mapStateToProps = (state) => ({
+  isAuthenicated: state.isAuthenicated
+})
+
+export default connect(mapStateToProps)(Main)
