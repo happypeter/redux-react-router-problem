@@ -1,3 +1,5 @@
+UPDATE: https://egghead.io/lessons/javascript-redux-using-withrouter-to-inject-the-params-into-connected-components is relavent
+
 ### FIXME Link/Redirect 问题
 
 一个奇怪的问题，对比本仓库最后两个 commit 。
